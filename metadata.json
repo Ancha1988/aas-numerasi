@@ -1,0 +1,8 @@
+{
+  "name": "NUMERACY LAB SMP",
+  "description": "Media Fasilitasi Interaktif Workshop Penguatan Numerasi bagi Guru SMP (120 Menit) Berbasis Papan Interaktif Digital (PID).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

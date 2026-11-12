@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-navy: #19304E;
+    --color-teal: #00848B;
+    --color-white: #FFFFFF;
+    --color-light-gray: #EFF5F8;
+    --color-gold: #E6A637;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.015em;
+  }
+
+  /* Interactive Flat Panel touch target optimizations */
+  button, select, input, textarea, a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Ergonomic touch feedback for PID fingers & stylus */
+  button:active, a:active {
+    transform: scale(0.985);
+  }
+}
+
+/* Ensure no container causes unwanted horizontal scroll */
+* {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar for PID & touch screens */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EFF5F8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00848B;
+}
+
+/* Print styles for LKPD, Evaluasi & Refleksi export to PDF */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm 14mm 14mm;
+  }
+
+  *, *:before, *:after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  /* Unclip modal containers so full multipage document prints without cutoffs */
+  .fixed {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
+  .max-h-\[92vh\], .max-h-\[94vh\], .max-h-\[96vh\] {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .overflow-y-auto {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  .no-print, header, nav, footer {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-page-break {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .shadow-md, .shadow-lg, .shadow-xl, .shadow-sm, .shadow-2xl {
+    box-shadow: none !important;
+  }
+}
